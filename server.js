@@ -65,7 +65,7 @@ fs.access("data/planets.json", fs.constants.F_OK, (err) => {
 
     try {
       planets = JSON.parse(data);
-      
+
     } catch (e) {
       console.error(`Failed to parse JSON data: ${e}`);
     }
@@ -83,7 +83,13 @@ app.get("/api/planets", (req, res) => {
     return;
   }
 
-  res.render('planets', { title: 'Info about Planets', planets: planets });
+  res.render('planets',
+    {
+      title: 'Planets | Virsta Ranch ltd',
+      pagetitle: 'Planets', 
+      planets: planets,
+      desc: "Info about planets"
+    });
 
 })
 

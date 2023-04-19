@@ -1,21 +1,34 @@
-<h1>{{title}}</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Distance from Sun (km)</th>
-        <th>Diameter (km)</th>
-        <th>Number of Moons</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each planets}}
-      <tr>
-        <td>{{name}}</td>
-        <td>{{type}}</td>
-        <td>{{distance_from_sun_km}}</td>
-        <td>{{diameter_km}}</td>
-        <td>{{number_of_moons}}</td>
-      </tr>
-      {{/each}}
+<h1>{{pagetitle}}</h1>
+
+{{#if desc}}
+<p>{{desc}}</p>
+{{else}}
+<p>Description manually here</p>
+{{/if}}
+
+<div class="card-container">
+
+    {{#each planets}}
+
+    <div class="card">
+        <div class="card-image">
+            {{!-- CARD IMAGE HERE --}}
+        </div>
+        <div class="card-header">
+
+            <h3>{{name}}</h3>
+            <p>{{type}}</p>
+        </div>
+
+        <div class="card-body">
+            <p><strong>Distance from Sun:</strong> {{distance_from_sun_km}} km</p>
+            <p><strong>Diameter:</strong> {{diameter_km}} km</p>
+            <p><strong>Number of Moons:</strong> {{number_of_moons}}</p>
+            
+        </div>
+    </div>
+
+    {{/each}}
+
+
+</div>
