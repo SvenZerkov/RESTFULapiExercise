@@ -1,7 +1,8 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
+const path = require("path");
+
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.engine("handlebars", exphbs.engine({
   
   app.set("view engine", "handlebars");
   
-  app.use(express.static("public"));
+  app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.urlencoded({ extended: false }));
 
 /*  1. Create a simple Node.js RESTful API.  
