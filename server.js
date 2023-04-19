@@ -48,8 +48,36 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
   modify the page to be more accessible
   */
 
+// create planets variable and fill it with data from file
+let planets = [];
+
+fs.access("data/planets.json", fs.constants.F_OK, (err) => {
+  if (err) {
+    console.error(`Failed to access file: ${err}`);
+    return;
+  }
+
+  fs.readFile("data/planets.json", (err, data) => {
+    if (err) {
+      console.error(`Failed to read file: ${err}`);
+      return;
+    }
+
+    try {
+      planets = JSON.parse(data);
+      
+    } catch (e) {
+      console.error(`Failed to parse JSON data: ${e}`);
+    }
+
+    console.log(`Loaded ${planets.length} from file`);
+  });
+});
+
+console.log(planets);
+
 // route get all
-app.get("/api/planets", (req,res) => {
+app.get("/api/planets", (req, res) => {
   res.send("test");
 })
 
