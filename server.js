@@ -70,15 +70,20 @@ fs.access("data/planets.json", fs.constants.F_OK, (err) => {
       console.error(`Failed to parse JSON data: ${e}`);
     }
 
-    console.log(`Loaded ${planets.length} from file`);
+    console.log(`Loaded ${planets.length} planets from file`);
   });
 });
 
-console.log(planets);
 
 // route get all
 app.get("/api/planets", (req, res) => {
-  res.send("test");
+  // res.send("test");
+  if (planets.length === 0) {
+    res.status(500).send("Failed to load data");
+    return;
+  }
+
+  res.render("planets", { planets });
 })
 
 const PORT = process.env.PORT || 3000;
