@@ -3,6 +3,7 @@
 /* Use a sans-serif font for better legibility */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
 }
 
 /* Use high contrast colors for better visibility */
