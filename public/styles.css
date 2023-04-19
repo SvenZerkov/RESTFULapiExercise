@@ -1,0 +1,157 @@
+/* General styles */
+
+/* Use a sans-serif font for better legibility */
+body {
+    font-family: sans-serif;
+  }
+  
+  /* Use high contrast colors for better visibility */
+  body {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Use a max-width to prevent long lines of text */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Link styles */
+  
+  /* Use underline for links to ensure they are distinguishable from regular text */
+  a {
+    text-decoration: underline;
+  }
+  
+  /* Use a different color for visited links to improve usability */
+  a:visited {
+    color: #800080;
+  }
+  
+  /* Use keyboard focus indicators for links to improve accessibility */
+  a:focus,
+  a:hover {
+    outline: 2px dotted #333;
+  }
+  
+  /* Header styles */
+  
+  /* Use heading elements to create a logical document structure */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  /* Use semantic HTML to create a logo element */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Navigation styles */
+  
+  /* Use a nav element to create a logical document structure */
+  nav {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Use a list for navigation links */
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Use a button for the mobile menu to improve accessibility */
+  nav button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+  }
+  
+  /* Product card styles */
+  .card-container {
+    display: flexbox;
+  }
+  .card {
+    background-color: #fff;
+    border: 5px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .card-image {
+    height: 200px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-content {
+    padding: 10px;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+    font-size: 28px;
+  }
+  
+  .card p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+  }
+  
+  /* Form styles */
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #800080;
+  }
+  
+  /* Footer styles */
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
