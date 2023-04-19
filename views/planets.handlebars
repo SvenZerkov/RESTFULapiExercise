@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Distance from Sun (km)</th>
+        <th>Diameter (km)</th>
+        <th>Number of Moons</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each planets}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{type}}</td>
+        <td>{{distance_from_sun_km}}</td>
+        <td>{{diameter_km}}</td>
+        <td>{{number_of_moons}}</td>
+      </tr>
+      {{/each}}

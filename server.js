@@ -83,7 +83,8 @@ app.get("/api/planets", (req, res) => {
     return;
   }
 
-  res.render("planets", { planets });
+  res.render('planets', { title: 'Info about Planets', planets: planets });
+
 })
 
 const PORT = process.env.PORT || 3000;
