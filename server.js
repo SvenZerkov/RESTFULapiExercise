@@ -2,6 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const dotenv = require("dotenv").config();
 const path = require("path");
+const fs = require("fs");
 
 
 const app = express();
@@ -46,6 +47,11 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
 - add css file 
   modify the page to be more accessible
   */
+
+// route get all
+app.get("/api/planets", (req,res) => {
+  res.send("test");
+})
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server up and running on port ${PORT}`));
