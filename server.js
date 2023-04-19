@@ -8,13 +8,13 @@ const app = express();
 
 // default settings
 app.engine("handlebars", exphbs.engine({
-    defaultLayout: "main"
-  }))
-  
-  app.set("view engine", "handlebars");
-  
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.use(express.urlencoded({ extended: false }));
+  defaultLayout: "main"
+}))
+
+app.set("view engine", "handlebars");
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
 
 /*  1. Create a simple Node.js RESTful API.  
 
@@ -46,3 +46,6 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
 - add css file 
   modify the page to be more accessible
   */
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server up and running on port ${PORT}`));
