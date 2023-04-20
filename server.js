@@ -40,7 +40,7 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
 - create route for 
   - get one by id -> done
   - get all -> done
-  - create new
+  - create new -> done
   - update 
   - delete 
 
@@ -81,6 +81,31 @@ fs.access("data/planets.json", fs.constants.F_OK, (err) => {
     console.log(`Loaded ${planets.length} planets from file`);
   });
 });
+
+/* // log request to file
+const logToFile = (req, res, next) => {
+  // create log entry
+  const logEntry = `Time: ${new Date().toISOString()}\n` +
+    `Method: ${req.method}\n` +
+    `URL: ${req.originalUrl}\n` +
+    `Request body: ${JSON.stringify(req.body)}\n\n`;
+
+  // write log entry to file
+  const logFilePath = path.join(__dirname, 'requests.log');
+  fs.appendFile(logFilePath, logEntry, err => {
+    if (err) {
+      console.error('Error writing to log file:', err);
+    }
+  });
+
+  // pass control to next middleware
+  next();
+}
+
+module.exports = logToFile;
+
+// log to file
+app.use(logToFile); */
 
 // get all, res JSON
 app.get("/api/planets", (req, res) => {
@@ -125,7 +150,7 @@ app.get("/api/planets/:id", (req, res) => {
 
 // route create one (must have name & type)
 app.post("/api/planets", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   if (!req.body.name || !req.body.type) {
     res.status(400).json(
       {
@@ -151,6 +176,46 @@ app.post("/api/planets", (req, res) => {
       .status(201)
       .location(location)
       .json(newPlanet);
+  }
+});
+
+// Update with patch using id
+app.patch("/api/planets/:id", (req, res) => {
+  console.log(req.body);
+
+  const idToUpdate = Number(req.params.id);
+
+  if (!req.body.name || !req.body.type) {
+    res.status(400).json(
+      {
+        msg: "Resource name or Type not sent"
+      }
+    )
+  } else {
+    let updatePlanet;
+
+    planets.forEach((planet) => {
+      if (planet.id === idToUpdate) {
+        planet.name = req.body.name || planet.name;
+        planet.type = req.body.type || planet.type;
+        planet.distance_from_sun_km =
+          req.body.distance_from_sun_km || planet.distance_from_sun_km;
+        planet.diameter_km = req.body.diameter_km || planet.diameter_km;
+        planet.number_of_moons =
+          req.body.number_of_moons || planet.number_of_moons;
+
+        updatePlanet = planet;
+      }
+    });
+
+    if (!updatePlanet) {
+      res.status(404).json({
+        msg: "Planet not found"
+      });
+    } else {
+      const location = `${req.protocol}://${req.hostname}${req.path}/${idToUpdate}`;
+      res.status(200).location(location).json(updatePlanet);
+    }
   }
 });
 

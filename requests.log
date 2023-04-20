@@ -1,0 +1,22 @@
+Time: 2023-04-20T10:05:23.683Z
+Method: GET
+URL: /api/planets/9
+Request body: {}
+Time: 2023-04-20T10:06:31.073Z
+Method: PATCH
+URL: /api/planets/8
+Request body: {}
+Time: 2023-04-20T10:11:18.399Z
+Method: PATCH
+URL: /api/planets/8
+Request body: {}
+Time: 2023-04-20T10:12:56.744Z
+Method: PATCH
+URL: /api/planets/8
+Request body: {}
+
+Time: 2023-04-20T10:13:43.028Z
+Method: PATCH
+URL: /api/planets/8
+Request body: {}
+
