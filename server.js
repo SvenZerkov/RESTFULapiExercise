@@ -8,9 +8,12 @@ const fs = require("fs");
 const app = express();
 
 // default settings
-app.engine("handlebars", exphbs.engine({
-  defaultLayout: "main"
-}))
+app.engine(
+  "handlebars",
+  exphbs.engine({
+    defaultLayout: "main",
+    partialsDir: path.join(__dirname, "views/partials")
+  }))
 
 app.set("view engine", "handlebars");
 
