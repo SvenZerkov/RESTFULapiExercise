@@ -41,7 +41,7 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
   - get one by id -> done
   - get all -> done
   - create new -> done
-  - update 
+  - update -> patch put done
   - delete 
 
 - create one server side rendered (SSR) web page => must use handlebars -> done
@@ -249,6 +249,22 @@ app.put("/api/planets/:id", (req, res) => {
     });
   }
 });
+
+// Delete planet
+app.delete("/api/planets/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const planetIndex = planets.findIndex(planet => planet.id === id);
+  if (planetIndex !== -1) {
+    planets.splice(planetIndex, 1);
+    res.json(planets);
+  } else {
+    res.status(404).json({
+      msg: "Planet not found"
+    });
+  }
+});
+
 
 
 
