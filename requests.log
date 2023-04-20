@@ -20,3 +20,43 @@ Method: PATCH
 URL: /api/planets/8
 Request body: {}
 
+Time: 2023-04-20T10:22:32.549Z
+Method: PATCH
+URL: /api/planets/10
+Request body: {"name":"Valcun","type":"Terrestrial","distance_from_sun_km":10000000,"diameter_km":6000,"number_of_moons":0}
+
+Time: 2023-04-20T10:26:17.522Z
+Method: PUT
+URL: /api/planets/8
+Request body: {"name":"Valcun","type":"Terrestrial","distance_from_sun_km":10000000,"diameter_km":6000,"number_of_moons":0}
+
+Time: 2023-04-20T10:26:38.024Z
+Method: PUT
+URL: /api/planets/8
+Request body: {"name":"Valcun","type":"Terrestrial","distance_from_sun_km":10000000,"diameter_km":6000,"number_of_moons":0}
+
+Time: 2023-04-20T10:26:58.041Z
+Method: PUT
+URL: /api/planets/10
+Request body: {"name":"Valcun","type":"Terrestrial","distance_from_sun_km":10000000,"diameter_km":6000,"number_of_moons":0}
+
+Time: 2023-04-20T10:27:03.030Z
+Method: PUT
+URL: /api/planets/1
+Request body: {"name":"Valcun","type":"Terrestrial","distance_from_sun_km":10000000,"diameter_km":6000,"number_of_moons":0}
+
+Time: 2023-04-20T10:27:06.966Z
+Method: PUT
+URL: /api/planets/0
+Request body: {"name":"Valcun","type":"Terrestrial","distance_from_sun_km":10000000,"diameter_km":6000,"number_of_moons":0}
+
+Time: 2023-04-20T10:27:19.280Z
+Method: GET
+URL: /api/planets
+Request body: {}
+
+Time: 2023-04-20T10:27:24.286Z
+Method: GET
+URL: /planets
+Request body: {}
+

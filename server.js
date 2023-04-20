@@ -82,7 +82,7 @@ fs.access("data/planets.json", fs.constants.F_OK, (err) => {
   });
 });
 
-/* // log request to file
+// log request to file
 const logToFile = (req, res, next) => {
   // create log entry
   const logEntry = `Time: ${new Date().toISOString()}\n` +
@@ -105,7 +105,7 @@ const logToFile = (req, res, next) => {
 module.exports = logToFile;
 
 // log to file
-app.use(logToFile); */
+app.use(logToFile);
 
 // get all, res JSON
 app.get("/api/planets", (req, res) => {
@@ -181,7 +181,7 @@ app.post("/api/planets", (req, res) => {
 
 // Update with patch using id
 app.patch("/api/planets/:id", (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
 
   const idToUpdate = Number(req.params.id);
 
@@ -218,6 +218,39 @@ app.patch("/api/planets/:id", (req, res) => {
     }
   }
 });
+
+// Update with put
+app.put("/api/planets/:id", (req, res) => {
+  console.log(req.body);
+  const idToUpdate = Number(req.params.id);
+
+  const planetIndex = planets.findIndex(planet => planet.id === idToUpdate);
+  if (planetIndex !== -1) {
+    const updatedPlanet = {
+      id: idToUpdate,
+      name: req.body.name || planets[planetIndex].name,
+      type: req.body.type || planets[planetIndex].type,
+      distance_from_sun_km: req.body.distance_from_sun_km || planets[planetIndex].distance_from_sun_km,
+      diameter_km: req.body.diameter_km || planets[planetIndex].diameter_km,
+      number_of_moons: req.body.number_of_moons || planets[planetIndex].number_of_moons
+    };
+
+    planets.splice(planetIndex, 1, updatedPlanet);
+
+    const location = `${req.protocol}://${req.hostname}${req.path}/${idToUpdate}`
+    res
+      .status(200)
+      .location(location)
+      .json(updatedPlanet);
+
+  } else {
+    res.status(404).json({
+      msg: "Planet not found"
+    });
+  }
+});
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server up and running on port ${PORT}`));
