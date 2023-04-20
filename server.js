@@ -37,15 +37,22 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
 /* 
 - create data on separate JSON file -> done
 - create route for 
-  - get one
-  - get all
+  - get one -> done
+  - get all -> done
   - create new
+  - update 
   - delete 
 
-- create one server side rendered (SSR) web page => must use handlebars
-- render the content on that page
-- add css file 
-  modify the page to be more accessible
+- create one server side rendered (SSR) web page => must use handlebars -> done
+- render the content on that page -> done
+- add css file -> done
+  modify the page to be more accessible -> done, can continue
+
+  EXTRA
+  - add pictures
+  - add find actions on site
+    - needs routes for different searches
+  
   */
 
 // create planets variable and fill it with data from file
@@ -74,9 +81,14 @@ fs.access("data/planets.json", fs.constants.F_OK, (err) => {
   });
 });
 
-
-// route get all
+// get all, res JSON
 app.get("/api/planets", (req, res) => {
+  res.contentType("application/json");
+  res.json(planets);
+});
+
+// route get all to render
+app.get("/planets", (req, res) => {
   // res.send("test");
   if (planets.length === 0) {
     res.status(500).send("Failed to load data");
@@ -86,12 +98,30 @@ app.get("/api/planets", (req, res) => {
   res.render('planets',
     {
       title: 'Planets | Virsta Ranch ltd',
-      pagetitle: 'Planets', 
+      pagetitle: 'Planets',
       planets: planets,
-      desc: "Info about planets"
+      desc: 'Info about planets'
     });
 
 })
+
+// route get one, res JSON
+app.get("/api/planets/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const planet = planets.find(planet => planet.id === id);
+
+  if (planet) {
+    res.json(planet);
+  } else {
+
+    res.status(404).json({
+      msg: `Not found by id ${id}`
+    })
+  }
+
+
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server up and running on port ${PORT}`));
