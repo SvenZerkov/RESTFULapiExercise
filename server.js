@@ -37,7 +37,7 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
 /* 
 - create data on separate JSON file -> done
 - create route for 
-  - get one -> done
+  - get one by id -> done
   - get all -> done
   - create new
   - update 
@@ -103,7 +103,7 @@ app.get("/planets", (req, res) => {
       desc: 'Info about planets'
     });
 
-})
+});
 
 // route get one, res JSON
 app.get("/api/planets/:id", (req, res) => {
@@ -120,7 +120,38 @@ app.get("/api/planets/:id", (req, res) => {
     })
   }
 
+});
 
+// route create one (must have name & type)
+app.post("/api/planets", (req, res) => {
+  console.log(req.body);
+  if (!req.body.name || !req.body.type) {
+    res.status(400).json(
+      {
+        msg: "Resource name or type of the planet not sent"
+      }
+    )
+  } else {
+    let newID = products[products.length - 1].id + 1;
+
+    const newPlanet = {
+      id: newID,
+      name: req.body.name,
+      type: req.body.type,
+
+      distance_from_sun_km: req.body.distance_from_sun_km,
+      diameter_km: req.body.diameter_km,
+      number_of_moons: req.body.number_of_moons
+    }
+
+    planets.push(newPlanet);
+
+    const location = `${req.protocol}://${req.hostname}${req.path}/${newID}`
+    res
+      .status(201)
+      .location(location)
+      .json(newPlanet);
+  }
 });
 
 const PORT = process.env.PORT || 3000;
