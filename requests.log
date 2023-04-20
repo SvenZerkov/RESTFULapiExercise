@@ -63,3 +63,138 @@ Method: DELETE
 URL: /api/planets/5
 Request body: {}
 
+Time: 2023-04-20T11:14:52.893Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:14:54.382Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:15:06.461Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:16:17.223Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:16:43.158Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:16:51.137Z
+Method: GET
+URL: /
+Request body: {}
+
+Time: 2023-04-20T11:17:25.594Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:17:26.833Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:17:31.514Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:19:52.614Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:22:37.855Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:23:58.959Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:25:33.838Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:27:21.720Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:27:41.793Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:28:09.880Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:28:40.892Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:29:17.610Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:29:26.023Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:29:44.987Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:30:13.927Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:32:43.663Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:34:08.714Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:34:17.700Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:36:35.603Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:38:47.084Z
+Method: GET
+URL: /planets
+Request body: {}
+
+Time: 2023-04-20T11:39:18.284Z
+Method: GET
+URL: /planets
+Request body: {}
+

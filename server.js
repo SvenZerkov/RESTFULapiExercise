@@ -46,7 +46,7 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
   - create new -> done
   - update -> patch put done
   - delete -> done
-  
+
 
 - create one server side rendered (SSR) web page => must use handlebars -> done
 - render the content on that page -> done
@@ -57,7 +57,11 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
   - add pictures
   - add find actions on site
     - needs routes for different searches
-  
+  - add extra info "behind" each card
+    - make cards as links or buttons to interact with
+  - add header section -> done
+  - add nav -> done
+
   */
 
 // create planets variable and fill it with data from file
