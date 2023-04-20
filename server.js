@@ -16,6 +16,7 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 /*  1. Create a simple Node.js RESTful API.  
 
@@ -132,13 +133,12 @@ app.post("/api/planets", (req, res) => {
       }
     )
   } else {
-    let newID = products[products.length - 1].id + 1;
+    let newID = planets[planets.length - 1].id + 1;
 
     const newPlanet = {
       id: newID,
       name: req.body.name,
       type: req.body.type,
-
       distance_from_sun_km: req.body.distance_from_sun_km,
       diameter_km: req.body.diameter_km,
       number_of_moons: req.body.number_of_moons
