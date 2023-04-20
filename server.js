@@ -45,7 +45,8 @@ Notice! Follow the instructions. Use the techniques we used in the classes (for 
   - get all -> done
   - create new -> done
   - update -> patch put done
-  - delete 
+  - delete -> done
+  
 
 - create one server side rendered (SSR) web page => must use handlebars -> done
 - render the content on that page -> done

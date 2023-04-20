@@ -58,3 +58,8 @@ Method: GET
 URL: /planets
 Request body: {}
 
+Time: 2023-04-20T10:57:19.925Z
+Method: DELETE
+URL: /api/planets/5
+Request body: {}
+
