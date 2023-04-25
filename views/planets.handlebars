@@ -11,13 +11,13 @@
 
     {{#each planets}}
 
-    <article class="card" aria-labelledby="planet-{{@index}}">
+    <article class="card" tabindex="0">
         <div class="card-image">
             {{!-- CARD IMAGE HERE --}}
         </div>
         <div class="card-header">
 
-            <h3 id="planet-{{@index}}">{{name}}</h3>
+            <h3>{{name}}</h3>
             <p><strong>Type: </strong> {{type}}</p>
         </div>
 
