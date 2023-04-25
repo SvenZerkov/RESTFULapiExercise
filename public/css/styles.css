@@ -133,7 +133,7 @@ nav button {
 }
 
 .card {
-  width: 300px;
+  width: 320px;
   background-color: #fff;
   border: 5px solid #ccc;
   border-radius: 4px;
@@ -141,6 +141,7 @@ nav button {
   margin: 20px;
   overflow: hidden;
   text-align: center;
+  padding: 12px;
 }
 
 .card-image {
@@ -164,9 +165,12 @@ nav button {
 }
 
 .card p {
-
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
+}
+
+.card-header p {
+  padding-bottom: 8px;
 }
 
 /* Form styles */
