@@ -6,11 +6,12 @@
 <p>Description manually here</p>
 {{/if}}
 
+
 <div class="card-container">
 
     {{#each planets}}
 
-    <div class="card">
+    <article class="card">
         <div class="card-image">
             {{!-- CARD IMAGE HERE --}}
         </div>
@@ -21,12 +22,12 @@
         </div>
 
         <div class="card-body">
-            <p><strong>Distance from Sun:</strong> {{distance_from_sun_km}} km</p>
-            <p><strong>Diameter:</strong> {{diameter_km}} km</p>
-            <p><strong>Number of Moons:</strong> {{number_of_moons}}</p>
+            <p><strong>Distance from Sun:</strong> {{formatNumber distance_from_sun_km}} km</p>
+            <p><strong>Diameter:</strong> {{formatNumber diameter_km}} km</p>
+            <p><strong>Number of Moons:</strong> {{formatNumber number_of_moons}}</p>
             
         </div>
-    </div>
+    </article>
 
     {{/each}}
 

@@ -3,6 +3,7 @@ const exphbs = require("express-handlebars");
 const dotenv = require("dotenv").config();
 const path = require("path");
 const fs = require("fs");
+const Handlebars = require("handlebars");
 
 
 const app = express();
@@ -111,6 +112,13 @@ const logToFile = (req, res, next) => {
 }
 
 module.exports = logToFile;
+
+// Define a Handlebars helper called 'formatNumber'
+Handlebars.registerHelper('formatNumber', function (num) {
+  // Convert the number to a string and use toLocaleString() to format it with commas
+  return Number(num).toLocaleString();
+});
+
 
 // log to file
 app.use(logToFile);
